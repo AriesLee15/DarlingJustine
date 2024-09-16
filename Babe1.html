@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy5th Darling</title>
+    <link rel="stylesheet" type="text/css" href="Babe1.css" />
+    <style>
+        /* Include updated CSS here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart-shape">
+            <!-- Videos positioned in heart shape -->
+            <video class="video-background video-1" muted loop>
+                <source src="V1.mp4" type="video/mp4">
+            </video>
+            <video class="video-background video-2" muted loop>
+                <source src="V2.mp4" type="video/mp4">
+            </video>
+            <video class="video-background video-3" muted loop>
+                <source src="V3.mp4" type="video/mp4">
+            </video>
+            <video class="video-background video-4" muted loop>
+                <source src="V4.mp4" type="video/mp4">
+            </video>
+            <video class="video-background video-5" muted loop>
+                <source src="V5.mp4" type="video/mp4">
+            </video>
+            <video class="video-background video-6" muted loop>
+                <source src="V6.mp4" type="video/mp4">
+            </video>
+            <video class="video-background video-7" muted loop>
+                <source src="V7.mp4" type="video/mp4">
+            </video>
+            <video class="video-background video-8" muted loop>
+                <source src="V8.mp4" type="video/mp4">
+            </video>
+            <video class="video-background video-10" muted loop>
+                <source src="V10.mp4" type="video/mp4">
+            </video>
+            <video class="video-background video-9" muted loop>
+                <source src="V9.mp4" type="video/mp4">
+            </video>        
+            
+            <div class="center-image-container">
+                <!-- Add the clickable image at the center -->
+                <img src="Letter.png" alt="Letter Box" id="clickable-image" style="display: none;">
+            </div>
+
+            <!-- Paper element for message -->
+            <div class="paper-message" id="paper-message">
+                <p> Hi Darling, Happy 5th monthsary and still counting. I love you, Darling. Thank you for all your efforts sa mga food na ginagawa mo Darling and sa lahat ng ginagwa mo para sakin Darling. Thank you for still staying with me. Thank you for forgiving me. Thank you for giving me a chance to understand me. Thank you for everything, Darling. I love you. I will always love you, darling, no matter what happens. I will always be by your side. Andito lang ako Darling, kung may mga problema ka, I will always support you. I know these past days nag aaway tayo, but we manage to fix it, and ano man ang mga paparating pang mga problema na haharapin natin sikapin nating ayusin sapagkat ikaw lang ang nasa pusot isipan ko hangang sa dulo Mamahalin kita hangang sa aking huling hininga pinapangako na andito ako lagi sa tabi mo. I love you, Darling. Happy 5th month anniversary.</p>
+            </div>
+        </div>
+
+        <div class="heart-container">
+            <img src="HeartCollage.png" alt="Heart-Shaped Image" class="heart-image">
+        </div>
+    </div>
+
+    <audio id="background-music">
+        <source src="Together - Ne-Yo (Lyrics) (mp3cut.net).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const heartImage = document.querySelector('.heart-image');
+            const letterBox = document.querySelector('#clickable-image');
+            const paperMessage = document.querySelector('#paper-message');
+            const audio = document.getElementById('background-music');
+            const videos = document.querySelectorAll('.video-background');
+
+            heartImage.addEventListener('click', () => {
+                // Hide the heart image
+                heartImage.classList.add('vanish');
+                setTimeout(() => heartImage.style.display = 'none', 500);
+
+                // Show all videos and letter box
+                setTimeout(() => {
+                    videos.forEach(video => {
+                        video.style.display = 'block';  // Display the video
+                        video.play().catch(error => {
+                            console.log('Video play failed:', error);
+                        });
+                    });
+
+                    letterBox.style.display = 'block';  // Show the letter box
+                }, 500);
+
+                // Play the background music
+                audio.play().catch(error => {
+                    console.log('Audio play failed:', error);
+                });
+            });
+
+            letterBox.addEventListener('click', () => {
+                paperMessage.style.display = 'block';  // Show the paper message
+                
+            });
+        });
+        
+    </script>
+</body>
+</html>
